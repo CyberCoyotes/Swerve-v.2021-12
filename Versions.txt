@@ -1,0 +1,1 @@
+Only use this with VS Code 2021.3 (v1.52)
