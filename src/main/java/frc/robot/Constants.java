@@ -48,6 +48,7 @@ public final class Constants {
     public static final int BACK_RIGHT_MODULE_STEER_MOTOR = 3; // Set back right steer motor ID
     public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 5; // Set back right steer encoder ID
     public static final double BACK_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(199.5); // Measure and set back right steer offset
+   
     // Added from previous code
     // public static AHRS gyro = new AHRS(SPI.Port.kMXP);
 
