@@ -1,0 +1,120 @@
+> Executing task: gradlew deploy  -PteamNumber=3603 --offline  -Dorg.gradle.java.home="C:\Users\Public\wpilib\2021\jdk" <
+
+
+> Task :discoverRoborio
+Discovering Target roborio
+Using admin@172.22.11.2:22 for target roborio
+
+> Task :deployNativeLibsRoborio
+  Artifact skipped...
+
+> Task :deployJreRoborio
+    -C-> if [[ -f "/usr/local/frc/JRE/bin/java" ]]; then echo OK; else echo MISSING; fi @ /tmp
+      -[0]-> OK
+
+  Artifact skipped...
+
+> Task :deployRoborioCommandsRoborio
+    -C-> sed -i -e 's/^StartupDLLs/;StartupDLLs/' /etc/natinst/share/ni-rt.ini @ /home/lvuser
+      -[-1]->
+
+> Task :deployFrcStaticFileDeployRoborio
+    -C-> mkdir -p  @ /home/lvuser/deploy
+      -[-1]->
+    1 file(s) are up-to-date and were not deployed
+
+> Task :deployFrcJavaRoborio
+    -C-> . /etc/profile.d/natinst-path.sh; /usr/local/frc/bin/frcKillRobot.sh -t 2> /dev/null @ /home/lvuser
+    1 file(s) are up-to-date and were not deployed
+    -C-> echo '/usr/local/frc/JRE/bin/java -XX:+UseConcMarkSweepGC -Djava.library.path=/usr/local/frc/third-party/lib -Djava.lang.invoke.stringConcat=BC_SB   -jar "/home/lvuser/Swerve_v.2021-12.jar" ' > /home/lvuser/robotCommand @ /home/lvuser
+      -[-1]->
+    -C-> chmod +x /home/lvuser/robotCommand; chown lvuser /home/lvuser/robotCommand @ /home/lvuser
+    -C-> chmod +x "/home/lvuser/Swerve_v.2021-12.jar"; chown lvuser "/home/lvuser/Swerve_v.2021-12.jar" @ /home/lvuser
+    -C-> sync @ /home/lvuser
+      -[-1]->
+    -C-> . /etc/profile.d/natinst-path.sh; /usr/local/frc/bin/frcKillRobot.sh -t -r 2> /dev/null @ /home/lvuser
+      -[-1]->
+
+> Task :deployNativeZipRoborio
+    29 file(s) are up-to-date and were not deployed
+    -C-> chmod -R 777 "/usr/local/frc/third-party/lib" || true; chown -R lvuser:ni "/usr/local/frc/third-party/lib" @ /usr/local/frc/third-party/lib
+      -[-1]->
+    -C-> ldconfig @ /usr/local/frc/third-party/lib
+      -[-1]->
+
+BUILD SUCCESSFUL in 7s
+12 actionable tasks: 8 executed, 4 up-to-date
+
+Terminal will be reused by tasks, press any key to close it.
+
+
+
+
+
+
+
+
+
+
+
+********** Robot program starting **********
+navX-Sensor startup initialization and startup calibration complete.
+navX-Sensor onboard startup calibration complete.
+navX-Sensor Yaw angle auto-reset to 0.0 due to startup calibration.
+CTR: No new response to update signal
+CTR: No new response to update signal
+Unhandled exception: java.lang.RuntimeException: Failed to configure CANCoder: SigNotUpdated
+Error at com.swervedrivespecialties.swervelib.ctre.CtreUtils.checkCtreError(CtreUtils.java:11): Unhandled exception: java.lang.RuntimeException: Failed to configure CANCoder: SigNotUpdated
+at com.swervedrivespecialties.swervelib.ctre.CtreUtils.checkCtreError(CtreUtils.java:11)
+at com.swervedrivespecialties.swervelib.ctre.CanCoderFactoryBuilder.lambda$build$0(CanCoderFactoryBuilder.java:27)
+at com.swervedrivespecialties.swervelib.ctre.Falcon500SteerControllerFactoryBuilder$FactoryImplementation.create(Falcon500SteerControllerFactoryBuilder.java:89)
+at com.swervedrivespecialties.swervelib.ctre.Falcon500SteerControllerFactoryBuilder$FactoryImplementation.create(Falcon500SteerControllerFactoryBuilder.java:74)
+at com.swervedrivespecialties.swervelib.SteerControllerFactory.create(SteerControllerFactory.java:20)
+at com.swervedrivespecialties.swervelib.SwerveModuleFactory.create(SwerveModuleFactory.java:32)
+at com.swervedrivespecialties.swervelib.Mk3SwerveModuleHelper.createFalcon500(Mk3SwerveModuleHelper.java:73)
+at com.swervedrivespecialties.swervelib.Mk3SwerveModuleHelper.createFalcon500(Mk3SwerveModuleHelper.java:103)
+at frc.robot.subsystems.DrivetrainSubsystem.<init>(DrivetrainSubsystem.java:150)
+at frc.robot.RobotContainer.<init>(RobotContainer.java:27)
+at frc.robot.Robot.robotInit(Robot.java:30)
+at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
+at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
+at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:407)
+at frc.robot.Main.main(Main.java:23)
+Robots should not quit, but yours did!
+Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): Robots should not quit, but yours did!
+The startCompetition() method (or methods called by it) should have handled the exception above.
+Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
+[phoenix] Library shutdown cleanly
+[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)
+********** Robot program starting **********
+NT: server: client CONNECTED: 172.22.11.1 port 62720
+navX-Sensor DISCONNECTED!!!.
+navX-Sensor Connected.
+navX-Sensor startup initialization and startup calibration complete.
+navX-Sensor onboard startup calibration complete.
+navX-Sensor Yaw angle auto-reset to 0.0 due to startup calibration.
+CTR: No new response to update signal
+CTR: No new response to update signal
+Unhandled exception: java.lang.RuntimeException: Failed to configure CANCoder: SigNotUpdated
+Error at com.swervedrivespecialties.swervelib.ctre.CtreUtils.checkCtreError(CtreUtils.java:11): Unhandled exception: java.lang.RuntimeException: Failed to configure CANCoder: SigNotUpdated
+at com.swervedrivespecialties.swervelib.ctre.CtreUtils.checkCtreError(CtreUtils.java:11)
+at com.swervedrivespecialties.swervelib.ctre.CanCoderFactoryBuilder.lambda$build$0(CanCoderFactoryBuilder.java:27)
+at com.swervedrivespecialties.swervelib.ctre.Falcon500SteerControllerFactoryBuilder$FactoryImplementation.create(Falcon500SteerControllerFactoryBuilder.java:89)
+Robots should not quit, but yours did!
+The startCompetition() method (or methods called by it) should have handled the exception above.
+at com.swervedrivespecialties.swervelib.ctre.Falcon500SteerControllerFactoryBuilder$FactoryImplementation.create(Falcon500SteerControllerFactoryBuilder.java:74)
+at com.swervedrivespecialties.swervelib.SteerControllerFactory.create(SteerControllerFactory.java:20)
+at com.swervedrivespecialties.swervelib.SwerveModuleFactory.create(SwerveModuleFactory.java:32)
+at com.swervedrivespecialties.swervelib.Mk3SwerveModuleHelper.createFalcon500(Mk3SwerveModuleHelper.java:73)
+at com.swervedrivespecialties.swervelib.Mk3SwerveModuleHelper.createFalcon500(Mk3SwerveModuleHelper.java:103)
+at frc.robot.subsystems.DrivetrainSubsystem.<init>(DrivetrainSubsystem.java:150)
+at frc.robot.RobotContainer.<init>(RobotContainer.java:27)
+at frc.robot.Robot.robotInit(Robot.java:30)
+at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
+at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
+at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:407)
+at frc.robot.Main.main(Main.java:23)
+Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:350): Robots should not quit, but yours did!
+Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:352): The startCompetition() method (or methods called by it) should have handled the exception above.
+[phoenix] Library shutdown cleanly
+[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)
