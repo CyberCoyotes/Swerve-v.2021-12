@@ -9,3 +9,6 @@ GitHub: https://github.com/SwerveDriveSpecialties/swerve-template 286
 
 ### swerve-lib vendordep
 GitHub: https://github.com/SwerveDriveSpecialties/swerve-lib
+
+## CTRE Documentation
+https://docs.ctre-phoenix.com/en/stable/ch08_BringUpCAN.html
